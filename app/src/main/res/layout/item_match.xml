@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="133dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/marginSmall"
+    android:elevation="8dp"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textHomeTeamName"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:layout_margin="@dimen/marginSmaller"
+            android:text="Brazil"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textHomeTeamGoals"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textAwayTeamName"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginSmaller"
+            android:text="Germany"
+            android:ellipsize="end"
+            android:lines="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textAwayTeamGoals"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textYear"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:text="2010"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textAwayTeamGoals"
+            app:layout_constraintStart_toStartOf="@+id/textHomeTeamGoals"
+            app:layout_constraintTop_toBottomOf="@+id/textDote" />
+
+        <TextView
+            android:id="@+id/textHomeTeamGoals"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:gravity="end"
+            app:layout_constraintBottom_toBottomOf="@+id/textHomeTeamName"
+            app:layout_constraintEnd_toStartOf="@+id/textDote"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textHomeTeamName"
+            app:layout_constraintTop_toTopOf="@+id/textHomeTeamName" />
+
+        <TextView
+            android:id="@+id/textDote"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/textHomeTeamName"
+            app:layout_constraintEnd_toStartOf="@+id/textAwayTeamGoals"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textHomeTeamGoals"
+            app:layout_constraintTop_toTopOf="@+id/textAwayTeamName" />
+
+        <TextView
+            android:id="@+id/textAwayTeamGoals"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:text="7"
+            android:gravity="start"
+            app:layout_constraintBottom_toBottomOf="@+id/textAwayTeamName"
+            app:layout_constraintEnd_toStartOf="@+id/textAwayTeamName"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textDote"
+            app:layout_constraintTop_toTopOf="@+id/textAwayTeamName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -4,8 +4,8 @@ import com.alsbihawi.abbas.worldcup.data.domain.Match
 
 object DataManager {
     private val matchesList= mutableListOf<Match>()
-    val matches:List<Match>
-        get() = matchesList
+     val matches:List<Match>
+         get() = matchesList
     private var indexMatch=0
 
     fun addMatch(match:Match){

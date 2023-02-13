@@ -11,4 +11,5 @@ object Constants {
         const val AWAY_TEAM_GOALS=7
         const val REFEREE_NAME=13
     }
+    const val MATCH="match"
 }

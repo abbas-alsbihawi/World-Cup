@@ -6,105 +6,122 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <TextView
-        android:id="@+id/textYear"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:src="@color/cardview_dark_background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2010"
-        app:layout_constraintBottom_toTopOf="@+id/textDote"
-        app:layout_constraintEnd_toEndOf="@+id/textAwayTeamGoals"
-        app:layout_constraintStart_toStartOf="@+id/textHomeTeamGoals"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textHomeTeamName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Brazil"
-        app:layout_constraintBottom_toBottomOf="@+id/textHomeTeamGoals"
-        app:layout_constraintEnd_toStartOf="@+id/textHomeTeamGoals"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textHomeTeamGoals" />
-
-    <TextView
-        android:id="@+id/textAwayTeamName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Germany"
-        app:layout_constraintBottom_toTopOf="@+id/icon_next"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintStart_toEndOf="@+id/textAwayTeamGoals"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textHomeTeamGoals"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        app:layout_constraintBottom_toBottomOf="@+id/textDote"
-        app:layout_constraintEnd_toStartOf="@+id/textDote"
-
-        app:layout_constraintStart_toEndOf="@+id/textHomeTeamName"
-        app:layout_constraintTop_toTopOf="@+id/textDote" />
-
-    <TextView
-        android:id="@+id/textDote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="."
-        app:layout_constraintBottom_toBottomOf="@+id/textAwayTeamGoals"
-        app:layout_constraintEnd_toStartOf="@+id/textAwayTeamGoals"
-
-        app:layout_constraintStart_toEndOf="@+id/textHomeTeamGoals"
-        app:layout_constraintTop_toTopOf="@+id/textAwayTeamGoals" />
-
-    <TextView
-        android:id="@+id/textAwayTeamGoals"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="7"
-        app:layout_constraintBottom_toBottomOf="@+id/textAwayTeamName"
-        app:layout_constraintEnd_toStartOf="@+id/textAwayTeamName"
-
-        app:layout_constraintStart_toEndOf="@+id/textDote"
-        app:layout_constraintTop_toTopOf="@+id/textAwayTeamName" />
-
-    <TextView
-        android:id="@+id/textStadium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Stadium name"
-        app:layout_constraintBottom_toBottomOf="@+id/icon_next"
-        app:layout_constraintEnd_toStartOf="@+id/icon_next"
-
-        app:layout_constraintStart_toEndOf="@+id/icon_previous"
-        app:layout_constraintTop_toTopOf="@+id/icon_next"
-      />
-
-    <ImageView
-        android:id="@+id/icon_previous"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_arrow_back_ios_24"
-        app:layout_constraintBottom_toBottomOf="@+id/textStadium"
-        app:layout_constraintEnd_toStartOf="@+id/textStadium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textStadium"
-         />
-
-    <ImageView
-        android:id="@+id/icon_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_arrow_forward_ios_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textStadium"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.263"
-         />
+        app:layout_constraintEnd_toEndOf="parent" />
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recycler_match"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+    app:spanCount="3"
+    tools:listitem="@layout/item_match_vertical"
+    />
+
+<!--    <TextView-->
+<!--        android:id="@+id/textYear"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="2010"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/textDote"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/textAwayTeamGoals"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/textHomeTeamGoals"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textHomeTeamName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Brazil"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/textHomeTeamGoals"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/textHomeTeamGoals"-->
+
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/textHomeTeamGoals" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textAwayTeamName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Germany"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/icon_next"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+
+<!--        app:layout_constraintStart_toEndOf="@+id/textAwayTeamGoals"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textHomeTeamGoals"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="0"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/textDote"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/textDote"-->
+
+<!--        app:layout_constraintStart_toEndOf="@+id/textHomeTeamName"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/textDote" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textDote"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="."-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/textAwayTeamGoals"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/textAwayTeamGoals"-->
+
+<!--        app:layout_constraintStart_toEndOf="@+id/textHomeTeamGoals"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/textAwayTeamGoals" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textAwayTeamGoals"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="7"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/textAwayTeamName"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/textAwayTeamName"-->
+
+<!--        app:layout_constraintStart_toEndOf="@+id/textDote"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/textAwayTeamName" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textStadium"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Stadium name"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/icon_next"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/icon_next"-->
+
+<!--        app:layout_constraintStart_toEndOf="@+id/icon_previous"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/icon_next"-->
+<!--      />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/icon_previous"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/baseline_arrow_back_ios_24"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/textStadium"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/textStadium"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/textStadium"-->
+<!--         />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/icon_next"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/baseline_arrow_forward_ios_24"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textStadium"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.263"-->
+<!--         />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

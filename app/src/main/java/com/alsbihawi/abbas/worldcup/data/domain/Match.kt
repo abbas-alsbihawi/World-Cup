@@ -9,4 +9,4 @@ data class Match(
     val homeTeamGoals:Int,
     val awayTeamGoals:Int,
     val refereeName:String,
-    )
+    ) :java.io.Serializable
