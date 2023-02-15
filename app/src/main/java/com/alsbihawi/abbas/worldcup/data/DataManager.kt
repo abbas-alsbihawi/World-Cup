@@ -5,11 +5,18 @@ import com.alsbihawi.abbas.worldcup.data.domain.Match
 object DataManager {
     private val matchesList= mutableListOf<Match>()
      val matches:List<Match>
-         get() = matchesList.reversed()
+         get() = matchesList.toList()
     private var indexMatch=0
 
     fun addMatch(match:Match){
        matchesList.add(match)
+    }
+    fun addMatchAt(match:Match,index:Int){
+        matchesList.add(index,match)
+    }
+
+    fun deleteMatchAt(index:Int){
+        matchesList.removeAt(index)
     }
 
     fun getCurrentMatch()= matchesList[indexMatch]

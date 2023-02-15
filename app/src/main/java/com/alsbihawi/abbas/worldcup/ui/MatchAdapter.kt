@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.alsbihawi.abbas.worldcup.R
 import com.alsbihawi.abbas.worldcup.data.domain.Match
@@ -29,6 +30,7 @@ class MatchAdapter(private var list: List<Match>, private val listener: MatchInt
             textHomeTeamName.setOnClickListener { listener.onClickTeamName(currentMatch.homeTeamName) }
             textAwayTeamName.setOnClickListener { listener.onClickTeamName(currentMatch.awayTeamName) }
             root.setOnClickListener { listener.onClickItem(currentMatch) }
+            iconDelete.setOnClickListener { listener.deleteAtItem(position) }
 
 
             if (currentMatch.homeTeamGoals>currentMatch.awayTeamGoals){
@@ -46,9 +48,10 @@ class MatchAdapter(private var list: List<Match>, private val listener: MatchInt
     }
 
     fun setList(newList: List<Match>){
+        val diffUtil=DiffUtil.calculateDiff(MatchDiffUtil(list,newList))
         list=newList
-        notifyDataSetChanged()
-    }
+        diffUtil.dispatchUpdatesTo(this)
+     }
 
 class MatchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val binding= ItemMatchBinding.bind(itemView)

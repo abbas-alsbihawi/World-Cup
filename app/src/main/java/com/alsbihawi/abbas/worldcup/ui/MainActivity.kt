@@ -35,7 +35,7 @@ class MainActivity:BaseActivity<ActivityMainBinding>(),MatchInteractionListener 
             awayTeamGoals= 2,
             refereeName= "",
         )
-        DataManager.addMatch(finalMatch)
+        DataManager.addMatchAt(finalMatch,1)
         adapter.setList(DataManager.matches)
     }
 
@@ -68,6 +68,11 @@ class MainActivity:BaseActivity<ActivityMainBinding>(),MatchInteractionListener 
 
     override fun onClickTeamName(name: String) {
         Toast.makeText(this,name,Toast.LENGTH_SHORT).show()
+    }
+
+    override fun deleteAtItem(index: Int) {
+        DataManager.deleteMatchAt(index)
+        adapter.setList(DataManager.matches)
     }
 
 //    private fun bindMatch(match: Match){
