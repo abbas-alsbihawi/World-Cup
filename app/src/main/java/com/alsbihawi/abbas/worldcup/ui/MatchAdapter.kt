@@ -9,9 +9,9 @@ import com.alsbihawi.abbas.worldcup.R
 import com.alsbihawi.abbas.worldcup.data.domain.Match
 import com.alsbihawi.abbas.worldcup.databinding.ItemMatchBinding
 
-class MatchAdapter(private val list: List<Match>,val listener: MatchInteractionListener):RecyclerView.Adapter<MatchAdapter.MatchViewHolder>() {
+class MatchAdapter(private var list: List<Match>, private val listener: MatchInteractionListener):RecyclerView.Adapter<MatchAdapter.MatchViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchViewHolder {
-       val view= LayoutInflater.from(parent.context).inflate(R.layout.item_match_vertical,parent,false)
+       val view= LayoutInflater.from(parent.context).inflate(R.layout.item_match,parent,false)
       return MatchViewHolder(view)
     }
 
@@ -43,8 +43,12 @@ class MatchAdapter(private val list: List<Match>,val listener: MatchInteractionL
 
             }
         }
+    }
 
-        }
+    fun setList(newList: List<Match>){
+        list=newList
+        notifyDataSetChanged()
+    }
 
 class MatchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val binding= ItemMatchBinding.bind(itemView)

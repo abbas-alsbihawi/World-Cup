@@ -17,21 +17,31 @@ class MainActivity:BaseActivity<ActivityMainBinding>(),MatchInteractionListener 
     override val LOG_TAG: String ="MAIN_ACTIVITY"
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding=ActivityMainBinding::inflate
 
+    lateinit var adapter: MatchAdapter
     override fun addCallBacks() {
-//       val currentMatch= DataManager.getCurrentMatch()
-//        binding?.apply {
-//            iconNext.setOnClickListener {
-//                bindMatch(DataManager.getNextMatch())
-//            }
-//            iconPrevious.setOnClickListener {
-//                bindMatch(DataManager.getPreviousMatch())
-//            }
-//        }
+        binding?.fab?.setOnClickListener {
+            addMatch()
+        }
+    }
+
+    private fun addMatch() {
+        val finalMatch=Match(
+            year= 2018,
+            stadium= "stadium",
+            city= "moscow",
+            homeTeamName= "France",
+            awayTeamName= "Croatia",
+            homeTeamGoals= 4,
+            awayTeamGoals= 2,
+            refereeName= "",
+        )
+        DataManager.addMatch(finalMatch)
+        adapter.setList(DataManager.matches)
     }
 
     override fun setup() {
         parseFile()
-        val  adapter=MatchAdapter(DataManager.matches.reversed(),this)
+           adapter=MatchAdapter(DataManager.matches,this)
         binding?.apply {
             recyclerMatch.adapter= adapter
         }
